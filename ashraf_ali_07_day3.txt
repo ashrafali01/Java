@@ -1,0 +1,68 @@
+devloper side=======
+
+
+/**
+ * 
+ */
+package devpack;
+
+/**
+ * 
+ */
+public class MyClass1 {
+   private int num;
+
+/**
+ * @return the num to get the value
+ */
+public int getNum() {
+	return num;
+}
+
+/**
+ * @param num the num to set the value
+ */
+public void setNum(int num) {
+	this.num = num;
+}
+	
+}
+
+
+class MyClass2 {
+	   private String name;
+
+	/**
+	 * @return name to get the value
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name to set the value
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+		
+	}
+
+
+=======client side========
+
+package clientpro;
+import devpack.MyClass1;
+import devpack.MyClass1.*;
+public class ClientApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     MyClass1 m1=new MyClass1();
+	 m1.setNum(20);
+	 System.out.println(m1.getNum());
+	}
+
+}
+
+

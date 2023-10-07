@@ -1,0 +1,325 @@
+Name: Ashraf Ali 07
+
+
+Question 1]
+
+*******************DEVELOPER CODE************************
+/**
+ * 
+ */
+package package1;
+
+/**
+ * @author Ashraf Ali
+ */
+public class Leo
+{
+interface Shape
+{
+	void draw();
+}
+class Triangle implements Shape
+{
+	public void draw()
+	{
+		System.out.println("In Triangle");
+	}
+}
+class Rect implements Shape
+{
+	public void draw()
+	{
+		System.out.println("In Rect");
+	}
+}
+class Circle implements Shape
+{
+	public void draw()
+	{
+		System.out.println("In Circle");
+	}
+}
+}
+
+**************************CLIENT CODE****************************
+
+package clienter;
+import package1.Leo;
+
+public class Leo2 {
+		static void perfrom(Shape ref)
+		{
+			ref.draw();
+		}
+		public static void main(String[] args) {
+			Shape ref[]=new Shape[3];
+			ref[0]=new Triangle();
+			ref[1]=new Rect();
+			ref[2]=new Circle();
+			for(int i=1;i<ref.length;i++)
+			{
+				ref[i].draw();
+			}
+
+		}
+
+	}
+
+Question 2](Interface Assignment 1)
+
+package firstpro;
+interface MouseHandler
+{
+	void mouseClicked();
+	void mousePressed();
+	void mouseReleased();
+}
+interface WindowHandler
+{
+	void windowClosing();
+	void windowClosed();
+}
+class WindowGUIApp implements  MouseHandler,WindowHandler
+{
+	public void windowClosing() {
+		System.out.println("Window Is Closing");
+	}
+	public void windowClosed() {
+		System.out.println("Window Is Closed Now");
+	}
+	public void mouseClicked() {
+		System.out.println("Mouse Clicked");
+	}
+	public void mousePressed() {
+		System.out.println("Mouse Pressed");
+	}
+	public void mouseReleased() {
+		System.out.println("Mouse Released");
+	}
+}
+public class Demo1
+{
+	public static void main(String[] args) {
+		WindowGUIApp w1=new WindowGUIApp();
+		w1.windowClosed();
+		w1.windowClosing();
+		w1.mouseClicked();
+		w1.mousePressed();
+		w1.mouseReleased();
+	}
+}
+
+Question 3]Interface Assignment 2
+
+
+*********************DEVELOPER CODE***************************
+/** (persistenceMechanism)
+ * 
+ */
+package devops;
+
+/**
+ * @author Ashraf Ali 07
+ */
+public class PersistenceMechanism {
+	public interface PersistenceMechanism1
+	{
+		void writeData(String ref);
+		String readData();
+	}
+}
+
+*********************CLIENT CODE**************************
+package clientops; (DEMO)
+
+import devops.PersistenceMechanism.PersistenceMechanism1;
+
+class FileSystem implements PersistenceMechanism1
+	{
+		public void writeData(String ref)
+		{
+			System.out.println("Write The Data In FileSystem");
+		}
+		public String readData()
+		{
+			System.out.println("Read The Data from The FileSystem");
+			return null;
+
+		}
+	}
+class DatabaseSystem implements PersistenceMechanism1
+{
+	public void writeData(String ref)
+	{
+		System.out.println("Write The Data In The DatabaseSystem");
+	}
+	public String readData()
+	{
+		System.out.println("Read The Data from DatabaseSystem ");
+		return null;
+	}
+}
+class BigdataSystem implements PersistenceMechanism1
+{
+	public void writeData(String ref)
+	{
+		System.out.println("write The Data Inside BigDataSystem");
+	}
+	public String readData()
+	{
+		System.out.println("Read Data From BigDataSystem");
+		return null;
+	}
+public class Demo
+{
+	static void perform(PersistenceMechanism1 ref1)
+	{
+		ref1.writeData("kedar");
+		ref1.readData();
+	}
+	public static void main(String[] args) {
+		PersistenceMechanism1 p1[]=new PersistenceMechanism1[3];
+	    p1[0]=new FileSystem();
+		p1[1]=new DatabaseSystem();
+		p1[2]=new BigdataSystem();
+		p1[2].writeData("kedar");
+		p1[2].readData();
+		/*for(int i=1;i<p1.length;i++)
+		{
+			p1[i].writeData("kedar");
+			p1[i].readData();
+		}*/
+	}
+
+}
+}
+
+Question 3]Interface Assignment 3
+
+***************************DEVELOPER CODE**************************
+/** 
+ * 
+ */
+package Package3;
+
+/**
+ * @author Ashraf Ali 07
+ */
+public class Vehicle {
+	interface Vehicle1
+	{
+		void changeGear(int a);
+		void speedUp(int a);
+		void applyBreaks(int a);
+	}
+
+}
+
+**********************CLIENT CODE****************************
+package cli_3;
+
+import Package3.Vehicle;
+
+	class FourWheeler implements Vehicle1	{
+		public void changeGear(int a)
+		{
+			System.out.println("Change the gear in fourwheeler");
+		}
+		public void speedUp(int a)
+		{
+		System.out.println("Speed Up FourWheeler");
+		}
+		public void applyBreaks(int a)
+		{
+			System.out.println("Apply Brakes Of FourWheeler");
+		}
+	}
+
+
+	class TwoWheeler implements Vehicle1
+	{
+		public void changeGear(int a)
+		{
+			System.out.println("Change The Gear In TwoWheeler");
+		}
+		public void speedUp(int a)
+		{
+			System.out.println("Speed Up In TwoWheeler");
+		}
+		public void applyBreaks(int a)
+		{
+			System.out.println("Apply Brakes In TwoWheeler");
+		}
+	}
+public class Demo2{
+	static void perform(Vehicle1 ref)
+	{
+		TwoWheeler ref1 = (TwoWheeler)ref;
+		ref.changeGear(10);
+		ref.speedUp(20);
+		ref.applyBreaks(30);
+		}
+	}
+	public static void main(String[] args) {
+		perform(new TwoWheeler());
+		//perform(new FourWheeler());
+		
+
+	}
+
+}
+
+Question 4] Weapon Assignment
+
+package firstpro;
+
+ class WeaponDemo
+{
+	public void attack()
+	{
+		System.out.println("ATTACK");
+    }
+}
+ 	class Sword extends WeaponDemo
+	{
+		public void attack()
+		{
+			System.out.println("Attack With Sword");
+		}
+	}
+ 	class Bomb extends WeaponDemo
+	{
+		public void attack()
+		{
+			System.out.println("Attack With Bomb");
+		}
+	}
+ 	class Gun extends WeaponDemo
+	{
+		public void attack()
+		{
+			System.out.println("Attack With Gun");
+		}
+		public void fillBullets()
+		{
+			System.out.println("Filling Bullets");
+		}
+	}
+ 	class Soldier
+	{
+		public void fight(WeaponDemo ref)
+		{
+			ref.attack();
+			if(ref instanceof Gun)
+			{
+				Gun g1=(Gun)ref;
+				g1.fillBullets();
+			}
+		}
+	}
+public class Weapon{
+	public static void main(String[] args) {
+		Soldier s1=new Soldier();
+		s1.fight(new Gun());
+	}
+}

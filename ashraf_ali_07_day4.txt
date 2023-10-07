@@ -1,0 +1,401 @@
+
+======1===========
+
+package day4;
+
+class First{
+	private int num;
+
+	/**
+	 * @return the num
+	 */
+	
+	First(){
+		System.out.println("Constructeo call");
+	}
+	First(int n){
+		this.num=n;
+	  System.out.println("argument constuctor is call");	
+	}
+	public int getNum() {
+		return num;
+	}
+
+	/**
+	 * @param num the num to set
+	 */
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+}
+
+class Second{
+	private int num1;
+
+	/**
+	 * @return the num
+	 */
+	
+	Second(){
+		System.out.println("Constructeo call");
+	}
+	Second(int n){
+		this.num1=n;
+	  System.out.println("argument constuctor is call");	
+	}
+	public int getNum() {
+		return num1;
+	}
+
+	/**
+	 * @param num the num to set
+	 */
+	public void setNum(int num1) {
+		this.num1 = num1;
+	}
+	
+}
+public class Two {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		First f1=new First();
+		Second s1=new Second();
+		First f2=new First(30);
+		Second s2=new Second(40);
+		f1.setNum(10);
+		System.out.println(f1.getNum());
+		System.out.println(f2.getNum());
+		s1.setNum(20);
+		System.out.println(s1.getNum());
+		System.out.println(s2.getNum());
+	}
+
+}
+
+
+==========2===========
+package day4;
+
+class A{
+	static int n1;
+	int n2;	
+	
+	static int fun1(int num) {
+		n1=num;
+		return n1;
+	}
+	int fun2(int num) {
+		n2=num;
+		return n2;
+	}
+}
+
+public class Two {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(A.fun1(20));
+		A a1=new A();
+		System.out.println(a1.fun2(40));
+		System.out.println(a1.fun1(30));
+	}
+
+}
+
+
+=========3==========
+
+package day4;
+
+class Check{
+	public int n1=10;
+	protected int n2=20;
+	private int n3=30;
+	int n4=40;
+	public int disp() {
+		return n3;
+	}
+}
+
+public class Two {
+
+	public static void main(String[] args) {
+		Check c1=new Check();
+		//public use directly
+		System.out.println(c1.n1);
+		//protected use directly
+		System.out.println(c1.n2);
+		//private can't acess so make a function and use indirect
+		System.out.println(c1.disp());
+		//default use directly
+		System.out.println(c1.n4);
+	}
+
+}
+
+
+=========4========
+
+package day4;
+
+class A{
+	A(){
+		System.out.println("A is call");
+	}
+}
+class B extends A{
+	B(){
+		System.out.println("B is call");
+		
+	}
+}
+
+public class Two {
+
+	public static void main(String[] args) {
+		
+		B b1=new B();
+		
+	}
+
+}
+
+=======5=========
+
+package day4;
+
+class A{
+	A(){
+		System.out.println("A is call");
+	}
+}
+class B extends A{
+	B(){
+		System.out.println("B is call");
+		
+	}
+	B(int n1){
+		System.out.println("B with parameter");
+	}
+}
+
+class C extends B{
+	C(){
+		System.out.println("C without parameter");
+	}
+	C(int n1){
+		super(20);
+		System.out.println(" C with parameter");
+	}
+}
+
+public class Two {
+
+	public static void main(String[] args) {
+		
+		C c1=new C();
+		C c2=new C(10);
+	}
+
+}
+
+
+====6==========
+package day4;
+
+class A{
+	A(){
+		System.out.println("A is call");
+	}
+	A(int n1){
+		System.out.println("A with parameter");
+	}
+}
+class B extends A{
+	B(){
+		System.out.println("B is call");
+		
+	}
+	B(int n1){
+		super(30);
+		System.out.println("B with parameter");
+	};
+}
+
+class C extends A{
+	C(){
+		System.out.println("C without parameter");
+	}
+	C(int n1){
+		super(20);
+		System.out.println(" C with parameter");
+	}
+}
+
+public class Two {
+
+	public static void main(String[] args) {
+		B b1=new B();
+		B b2=new B(20);
+		C c1=new C();
+		C c2=new C(10);
+	}
+
+}
+
+====7=========
+
+package day4;
+
+class Person{
+	
+	void info() {
+		System.out.println("This will be over ride");
+	}
+}
+ 
+class Student extends Person{
+	
+	void info() {
+		System.out.println("Person info will be overriding");
+	}
+}
+public class Two {
+
+	public static void main(String[] args) {
+		
+		Student s1=new Student();
+		s1.info();
+	}
+
+}
+
+
+====8=========
+
+package day4;
+
+class Person{
+	
+	void info() {
+		System.out.println("Concept of Overloading");
+	}
+}
+ 
+class Student extends Person{
+	
+	void info(String name) {
+		System.out.println("Student name is "+name);
+	}
+}
+public class Two {
+
+	public static void main(String[] args) {
+		
+		Student s1=new Student();
+		s1.info("vita");
+		s1.info();
+	}
+
+}
+
+======9=========
+
+package day4;
+
+class Shape{
+	
+	void drow() {
+		System.out.println("drow will drow Shape");
+	}
+}
+ 
+class Circle extends Shape{
+	
+	void drow() {
+		System.out.println("Shape is a Circle");
+	}
+}
+
+class Polygon extends Shape{
+	
+	void drow() {
+		System.out.println("Shape is a Polygon");
+	}
+}
+
+class Rectangle extends Shape{
+	
+	void drow() {
+		System.out.println("Shape is a Rectangle");
+	}
+}
+public class ShapeDemo {
+
+	public static void main(String[] args) {
+		
+		Shape s1=new Circle();//UperCasting
+		s1.drow();
+		Shape s2=new Polygon();
+		s2.drow();
+		Shape s3=new Rectangle();
+		s3.drow();
+	}
+
+}
+
+
+=========10=========
+
+package day5;
+
+interface Vehicle{
+	void start();
+}
+
+class TwoWheeler implements Vehicle{
+	public void start() {
+	System.out.println("TwoWheeler is start");	
+	}
+}
+
+class ThreeWheeler implements Vehicle{
+	public void start() {
+	System.out.println("ThreeWheeler is start");	
+	}
+}
+
+class FourWheeler implements Vehicle{
+	public void start() {
+	System.out.println("FourWheeler is start");	
+	}
+}
+public class VDemo {
+    static void perform(Vehicle v1) {
+    	
+     v1.start();
+    }
+    
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        perform(new TwoWheeler());
+        perform(new ThreeWheeler());
+        perform(new FourWheeler());
+        
+        Vehicle arr[]=new Vehicle[3];
+  
+        arr[0]=new TwoWheeler();
+        arr[1]=new ThreeWheeler();
+        arr[2]=new FourWheeler();
+      
+        for(int i=0;i< arr.length;i++) {
+        	arr[i].start();
+        }
+       
+	}
+
+}
+
+
