@@ -1,0 +1,54 @@
+// Q. 1>
+package PracticalTest1;
+abstract class Account
+{
+	abstract void calcInt();
+}
+class Saving extends Account
+{
+	void calcInt() {
+		System.out.println("In Saving");
+	}
+}
+class Current extends Account
+{
+	void calcInt() {
+		System.out.println("In Current");
+	}
+}
+class RD extends Account
+{
+	void calcInt() {
+		System.out.println("In RD");
+	}
+}
+
+public class AcDemo {
+	static void perform(Account ref)
+	{	
+		ref.calcInt();
+
+	}
+	public static void main(String []args) {
+		perform(new Saving());
+		System.out.println("Done");
+}
+}
+
+Q.2>
+
+package PracticalTest1;
+
+public class NumberPattern {
+	public static void main(String []args) 
+	{
+		for (int i=1; i<=4; i++)
+		{
+			for(int k=1; k<=i; k++)
+			{
+			   System.out.print(k);
+			}
+			System.out.println();				
+			}
+		}
+	}
